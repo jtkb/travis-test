@@ -9,10 +9,38 @@
 
     <name>travis-test</name>
     <url>http://maven.apache.org</url>
-
+    <developers>
+        <developer>
+            <name>Kerry Billingham</name>
+            <email>contact@javatechnics.com</email>
+            <organization>http://www.javatechnics.com</organization>
+        </developer>
+    </developers>
+    <licenses>
+        <license>
+            <name>The Apache License, Version 2.0</name>
+            <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+        </license>
+    </licenses>
+    <scm>
+        <connection>scm:git:git://github.com/jtkb/travis-test.git</connection>
+        <developerConnection>scm:git:ssh://github.com:jtkb/travis-test.git</developerConnection>
+        <url>https://github.com/jtkb/travis-test</url>
+    </scm>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
+
+    <distributionManagement>
+        <snapshotRepository>
+            <id>ossrh</id>
+            <url>https://oss.sonatype.org/content/repositories/snapshots</url>
+        </snapshotRepository>
+        <repository>
+            <id>ossrh</id>
+            <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+        </repository>
+    </distributionManagement>
 
     <dependencies>
         <dependency>
@@ -30,6 +58,36 @@
     </dependencies>
 
     <build>
+        <pluginManagement>
+            <plugins>
+                <!-- GPG Sign Artifact - Active by default -->
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-gpg-plugin</artifactId>
+                    <version>1.5</version>
+                    <executions>
+                        <execution>
+                            <id>sign-artifacts</id>
+                            <phase>verify</phase>
+                            <goals>
+                                <goal>sign</goal>
+                            </goals>
+                        </execution>
+                    </executions>
+                </plugin>
+
+                <!-- Deploy - Active by default. -->
+                <plugin>
+                    <artifactId>maven-deploy-plugin</artifactId>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <version>2.8.2</version>
+                    <extensions>true</extensions>
+                    <configuration>
+                        <deployAtEnd>true</deployAtEnd>
+                    </configuration>
+                </plugin>
+            </plugins>
+        </pluginManagement>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -48,10 +106,39 @@
                 <configuration>
                     <instructions>
                         <Bundle-Activator>com.example.App</Bundle-Activator>
-                        <Export-Package/>
+                        <Export-Package />
                     </instructions>
                 </configuration>
             </plugin>
         </plugins>
     </build>
+
+    <profiles>
+        <profile>
+            <id>release</id>
+            <activation>
+                <activeByDefault>false</activeByDefault>
+            </activation>
+            <build>
+                <plugins>
+                    <!--<plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-source-plugin</artifactId>
+                    </plugin>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-javadoc-plugin</artifactId>
+                    </plugin>-->
+                    <plugin>
+                        <artifactId>maven-deploy-plugin</artifactId>
+                        <groupId>org.apache.maven.plugins</groupId>
+                    </plugin>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-gpg-plugin</artifactId>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+    </profiles>
 </project>

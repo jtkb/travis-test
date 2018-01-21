@@ -2,9 +2,19 @@ language: java
 jdk:
   - oraclejdk8
 
+env:
+  global:
+    - secure: "YVlOFfLdp99YhkynGQh1IH1AJB6XiMKw3eJYkTPtzwhK/FOqgSjtTyERJd63CPkkbleW4hHxCrsL28w2uRRp1SO/a/huvieG0Om8ujNGggEtyGYNDhWuIOrwiK2Lul3ThwyeIq/SdVZ1IDWmC0V8L0wp5vsau92QPfkCab/lBiVbr+VV/2W+AbYceg1SM69TDjYZhpq3iyWGvHA/+MpoxHXzjCPLOHnoTXoIxELyWjIqpVqAHbuWxCU0oAy/jTCY7btQ50QfKO8D8sG+m1rMrGvwS2Nf+YciPP+jMcjv7u4zPQSmd0qUAMiZDrUJhoabBRHuRKk7XZOPEW+t4nLCyYXUq8kotn/Y2ka7G6rcKDzFeR4eshrPsfVCKmAOWiEikLr2Io3SYdOrRYjbahyO9UwZMcUL4TlMXfm7d50D8x8cdMsRZG6rxCZeWp/8XeBm05qec0tx9rno1Jmd3VZtHMuNT+Tq/EAVCq7iO2pUwHQeCki/NCNgpKSsDiH8U+RmlRsruLG3nqxhfYgqKq+0LWyp7V4cb5JZej1B7buzh6dfIIu/goHGqCz3wIthSLPMdgd2Stld+KHxPvyAGuAVnWmO2i4QR0oxTX+x9eTDij6Ex/grS9G3cChyRamlGWGovLzRK44CaoRHCI7zQhensLIYAMCGq2SANNksP47dLQ8="
+    - secure: "bga4884+8ToJY2dgXThkx2eqsF+MPoSj7HyALQzbpTEiM1FmKtsHfWqEaEUVcuQkQmEPbC2tk19BEDgDNTaRXHUiu4U2bFTNgoV9mEnKvAe8Im3gQBJkHyPm5cpHgiZHH7ZdBY7TnKdenMZIm2EpttyHDgke9SRFZZeVO9ZM1HabNtTzJ+p2mb91+Zq0cqPyG/MztofK0Qg2EL3wdgSUltebXsrVCQXws7995Atav632ng+eU426XZOhLvc0hf61lLxZOB8KcHvUDlkqK0LAKBc4hkNwuVFhTwIkyYcOZIY5IlnTINFyz0K09DhS0LhsHOO1+e9g33oVs1NmJTzTbWtjyK/K/MGqi1QMnEX/gOC0MHYfUPvsIzzmB65h07l/kP0TgY/YFiSnfdoNBWUU9Mr0W+E5Gl4FIz0ptX0GPhmh+1nMY8I351pKME5jhnXerFGhMvTz8eTfSCfMICS6WJeWeteHBYIezSLIiMx7zWn0OhwCOyBp2xeGMhhTy2+bDae7uxM7QJPSlI2zSvtQvDBPbrmXxhD9B632PxW0W2es8eEeBpohXm9dChgFz+v9Wm45mRBHh6Wjbg0fmSrB3Wf9IMrs81sY+nPZbNq9xhnNOiS5WqZlsd4WbFvkoTZrlHgLqkeFdleasUpBs9cdEVij4Se7gnPtFr1FfPg1JlY="
+    - secure: "UjuXa2z67ROKFC2DbPkWUL1PFlYXwR1QcCY8B61DfVTWhfITAJ4tvFSNcoKwFnMGFrrJi2geJNuKC0OlxWA3nVk+LQ6nnWvEk18Y+cR/KSamyF2ejIGDM5wurflRcIn7XxvAENtLIWC9bt2c+9VPM0v0Xy1Xlc/1RQMAKUHMZ8ATwq7jMSf4gN81D53I4lvuRuHAf46J1jpcI4awVeh92ep6ueW78L08L/YcNA1EK20/gOx3A5Bk1pYphQHWxvxYFeBRKEWseTuDrJ2jESNMvjxhkXpnVvGR3CNdvF8ZhKd8p4WZhxeD9UaWj/FbnNnQseHF40c9haR0d1GcmVCFqX6ZVfXo1dl/spAyOQNjWJNBczo2QYGGPGyyYzBiXWBEd5n43QiWAoPmd6+9fQOIX/Bf5TET4WaqhA9/9vCNUkBErCfU6hOtOVCqPu+Ym2N9PrNIcqbr28tSNT9zTtCul6zwpN8YXdQoSGEY9TjvIl4qQyLX4HtHrZoKc6mXf6rhIsmU0KRxhxvHZr8W3iGRIaB0HLAw43OKMMkHFK9Za79d+sgaCm8hZ7/6sDtfUTTOjVavb301pqzmqPsf7Cm0PC1NNDpdr2zRAmtdAa6kqaANuI+6cZcSkQipO+s4etqBhk3odRDoCWlVJQRHf08ZI5jaC+oCBdWwob400GLqB3c="
+    - secure: "kvCOMfusFCxR3DOxBWn78jNaKgJ2UdFe35pYTzAC7FAOcwgbGrsZxFGYLQJylFk9t8sggT84aKfk+IytlgOqM/6/zvKLsiqln2EE9EYZuhLnFuAe7oPTOziNEAwIWz3scDjVaGelmM0SniUBZ+Iiq/2A1Pvd1joxhDUg7wtlT9coRvvhXlMR7+F7GxUIhRUHAZDYRBOFF90VA3LBGi3aHGbngG6ujT/vkpC89zUdbNk3XFeDBrFLCMSZ9EBvxYahX5OVwZ9PizN9W264AAHqZUOEYhqUOReTh9WLNMcleP2POP3M9xi9LPZizpPFVeYmpUhh0KbgndDGhfUzN/ZCUXm2uZyzovBZnOM576YcuZ3XRxO8igIIMyBotoYwy7GRWvQepy02KmyYn2w7xTDRXZVr70syzradlnkqakqX7S6dkz/xyQU51Ntp/kg1rEscQ9mRf+C2czLKv/b4orTKcPyI9XJolpP29sMyjP3rDuS38j1YjUaj26owDI2OL52tel26TA3eIUtF6p3VICU9qWbYWazDqV1XyeWSh3bbs6UawKRbw+90mxNtu7F4T+rzOQeXaYuCL0p1Ac1eEXORT2D+RPjoSRAeTEHcjc22o0923SqYYDj5WlohkXJOl3NlhjK0U7MvaSziUTGYGxtpnDcgA2E7JeiYnEbl3kfYHcw="
+
 install: true
 
-script: mvn clean install
+before_script:
+  - ./travis/before_deploy.sh
+
+script: mvn clean deploy -Prelease --settings travis/travissettings.xml
 
 # after_success:
 #  - branches:
@@ -14,9 +24,9 @@ script: mvn clean install
 #      - email:
 #        - contact@avionicengineers.com
 
-notifications:
-  email:
-    recipients:
-      - contact@avionicengineers.com
-    on_success: always
-    on_failure: always
+#notifications:
+#  email:
+#    recipients:
+#      - contact@avionicengineers.com
+#    on_success: always
+#    on_failure: always
