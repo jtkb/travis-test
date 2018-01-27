@@ -52,12 +52,12 @@ fi
 if [ "$TRAVIS_BRANCH" = 'master' ] && [ ${IS_RELEASE} -eq ${TRUE} ] && [ ${IS_PR} -eq ${FALSE} ]; then
     echo "Building MASTER for release"
     export MVN_PHASES="clean deploy"
-    export MVN_PROFILES="-Prelease"
+    export MVN_PROFILES="-Prelease,ossrh"
     export MVN_SETTINGS="--settings travis/travissettings.xml"
 elif [ "$TRAVIS_BRANCH" = 'dev' ] && [ ${IS_RELEASE} -eq ${FALSE} ] && [ ${IS_PR} -eq ${FALSE} ]; then
     echo "Building DEV for SNAPSHOT"
     export MVN_PHASES="clean deploy"
-    export MVN_PROFILES="-Prelease"
+    export MVN_PROFILES="-Prelease,ossrh"
     export MVN_SETTINGS="--settings travis/travissettings.xml"
 else
     echo "Doing standard build for ${TRAVIS_BRANCH} branch."
