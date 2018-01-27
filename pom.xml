@@ -4,7 +4,7 @@
 
     <groupId>com.javatechnics</groupId>
     <artifactId>travis-test</artifactId>
-    <version>1.0.0-SNAPSHOT</version>
+    <version>20.2.1-SNAPSHOT</version>
     <packaging>bundle</packaging>
 
     <name>travis-test</name>
