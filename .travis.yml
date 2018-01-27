@@ -15,7 +15,6 @@ before_script:
   - . ./travis/before_script.sh
 
 script: mvn ${MVN_PHASES} ${MVN_PROFILES} ${MVN_SETTINGS}
-#  - ./travis/build_script.sh
 
 after_success:
   - ./travis/cleanup.sh

@@ -21,7 +21,6 @@ if [ "$TRAVIS_BRANCH" = 'master' ] && [ "$TRAVIS_PULL_REQUEST" != 'false' ]; the
     echo "Project Version: ${PROJECT_VERSION}"
     echo ${PROJECT_VERSION} | grep \\-SNAPSHOT$
     if [ $? -eq 0 ]; then
-        # version ends with -SNAPSHOT
         echo "The version ends with -SNAPSHOT."
         exit 1
     fi
@@ -52,19 +51,16 @@ fi
 # Configure Maven command line params
 if [ "$TRAVIS_BRANCH" = 'master' ] && [ ${IS_RELEASE} -eq ${TRUE} ] && [ ${IS_PR} -eq ${FALSE} ]; then
     echo "Building MASTER for release"
-    #mvn clean deploy -Prelease --settings travis/travissettings.xml
     export MVN_PHASES="clean deploy"
     export MVN_PROFILES="-Prelease"
     export MVN_SETTINGS="--settings travis/travissettings.xml"
 elif [ "$TRAVIS_BRANCH" = 'dev' ] && [ ${IS_RELEASE} -eq ${FALSE} ] && [ ${IS_PR} -eq ${FALSE} ]; then
     echo "Building DEV for SNAPSHOT"
-    #mvn clean deploy -Prelease --settings travis/travissettings.xml
     export MVN_PHASES="clean deploy"
     export MVN_PROFILES="-Prelease"
     export MVN_SETTINGS="--settings travis/travissettings.xml"
 else
-    echo "Doing plain build."
-    #mvn clean install
+    echo "Doing standard build for ${TRAVIS_BRANCH} branch."
     export MVN_PHASES="clean install"
     export MVN_PROFILES=""
     export MVN_SETTINGS=""
