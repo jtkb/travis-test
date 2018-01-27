@@ -29,6 +29,7 @@
     </scm>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <gpg.plugin.version>1.6</gpg.plugin.version>
     </properties>
 
     <distributionManagement>
@@ -63,7 +64,7 @@
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-gpg-plugin</artifactId>
-                    <version>1.6</version>
+                    <version>${gpg.plugin.version}</version>
                     <executions>
                         <execution>
                             <id>sign-artifacts</id>
@@ -95,6 +96,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-gpg-plugin</artifactId>
+                <version>${gpg.plugin.version}</version>
                 <configuration>
                     <skip>true</skip>
                 </configuration>
@@ -146,6 +148,7 @@
                     <plugin>
                         <groupId>org.apache.maven.plugins</groupId>
                         <artifactId>maven-gpg-plugin</artifactId>
+                        <version>${gpg.plugin.version}</version>
                     </plugin>
                 </plugins>
             </build>

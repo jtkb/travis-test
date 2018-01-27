@@ -29,7 +29,7 @@ public class App implements SceneService, BundleActivator
         parent.setMinWidth(200);
         parent.setMaxHeight(200);
         parent.setPrefHeight(200);
-        parent.setBackground(new Background(new BackgroundFill(Color.BLUE, CornerRadii.EMPTY, Insets.EMPTY)));
+        parent.setBackground(new Background(new BackgroundFill(Color.RED, CornerRadii.EMPTY, Insets.EMPTY)));
     }
 
     @Override
