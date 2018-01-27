@@ -12,9 +12,11 @@ env:
 install: true
 
 before_script:
-  - ./travis/before_script.sh
+#  - . ./travis/extract_version.sh
+  - . ./travis/before_script.sh
 
-script: mvn clean deploy -Prelease --settings travis/travissettings.xml
+script:
+  - ./travis/build_script.sh
 
 after_success:
   - ./travis/cleanup.sh
