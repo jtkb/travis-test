@@ -1,8 +1,13 @@
 package com.example;
 
 import com.javatechnics.flexfx.scene.SceneService;
+import javafx.geometry.Insets;
 import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.Background;
+import javafx.scene.layout.BackgroundFill;
+import javafx.scene.layout.CornerRadii;
+import javafx.scene.paint.Color;
 import org.osgi.framework.BundleActivator;
 import org.osgi.framework.BundleContext;
 import org.osgi.framework.ServiceRegistration;
@@ -13,6 +18,7 @@ public class App implements SceneService, BundleActivator
 {
     private final Scene scene;
     private ServiceRegistration<SceneService> serviceServiceRegistration;
+
     public App()
     {
         AnchorPane parent = new AnchorPane();
@@ -23,6 +29,7 @@ public class App implements SceneService, BundleActivator
         parent.setMinWidth(200);
         parent.setMaxHeight(200);
         parent.setPrefHeight(200);
+        parent.setBackground(new Background(new BackgroundFill(Color.BLUE, CornerRadii.EMPTY, Insets.EMPTY)));
     }
 
     @Override
