@@ -17,6 +17,8 @@ else
     export IS_PR=${TRUE}
 fi
 
+echo "IS PR: ${IS_PR}"
+
 ## Test if merge to master that it is not still in SNAPSHOT
 if [ "$TRAVIS_BRANCH" = 'master' ] && [ "$TRAVIS_PULL_REQUEST" != 'false' ]; then
     echo "Project Version: ${PROJECT_VERSION}"
@@ -50,12 +52,12 @@ if [ "$TRAVIS_BRANCH" = 'master' ] && [ ${IS_RELEASE} -eq ${TRUE} ] ; then
 fi
 
 # Configure Maven command line params
-if [ "$TRAVIS_BRANCH" = 'master' ] && [ ${IS_RELEASE} -eq ${TRUE} ] && [ ${IS_PR} -eq ${FALSE} ]; then
+if [ "$TRAVIS_BRANCH" = "master" ] && [ ${IS_RELEASE} -eq ${TRUE} ] && [ ${IS_PR} -eq ${FALSE} ]; then
     echo "Building MASTER for release"
     export MVN_PHASES="clean deploy"
     export MVN_PROFILES="-Prelease,ossrh"
     export MVN_SETTINGS="--settings travis/travissettings.xml"
-elif [ "$TRAVIS_BRANCH" = 'dev' ] && [ ${IS_RELEASE} -eq ${FALSE} ] && [ ${IS_PR} -eq ${FALSE} ]; then
+elif [ "$TRAVIS_BRANCH" = "dev" ] && [ ${IS_RELEASE} -eq ${FALSE} ] && [ ${IS_PR} -eq ${FALSE} ]; then
     echo "Building DEV for SNAPSHOT"
     export MVN_PHASES="clean deploy"
     export MVN_PROFILES="-Prelease,ossrh"
