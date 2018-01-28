@@ -5,7 +5,8 @@ echo "TRAVIS_PULL_REQUEST = ${TRAVIS_PULL_REQUEST}"
 
 export PROJECT_VERSION=$(mvn help:evaluate -Dexpression=project.version | grep -v ^[^0-9] | grep '^[0-9]\+\.[0-9]\+\.[0-9]\+')
 echo "PROJECT_VERSION = ${PROJECT_VERSION}"
-export IS_RELEASE=$(echo ${PROJECT_VERSION} | grep \\-SNAPSHOT$ | echo $?)
+echo ${PROJECT_VERSION} | grep \\-SNAPSHOT$
+export IS_RELEASE="$?"
 echo "IS_RELEASE = ${IS_RELEASE}"
 export TRUE=1
 export FALSE=0
